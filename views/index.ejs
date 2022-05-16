@@ -1,0 +1,93 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="grid-container">
+    <header></header>
+    <main>
+      <article>
+        <form method="post" action="/create" id="create">
+          <label for="">Insert new Song</label>
+          <input
+            type="text"
+            placeholder="Song-name"
+            required
+            id="name"
+            name="songname"
+          />
+          <input
+            type="text"
+            placeholder="Artist-ID"
+            required
+            id="artist"
+            name="artist"
+          />
+          <input
+            type="text"
+            placeholder="Album-ID"
+            required
+            id="album"
+            name="album"
+          />
+          <button type="submit">Send</button>
+        </form>
+        <article>
+          <form method="post" action="/readsong" id="readsong">
+            <label for="">Read songs</label>
+            <button type="submit">Send</button>
+          </form>
+          <form method="post" action="/readalbum" id="readalbum">
+            <label for="">Read album</label>
+            <button type="submit">Send</button>
+          </form>
+          <form method="post" action="/readartist" id="readartist">
+            <label for="">Read artist</label>
+            <button type="submit">Send</button>
+          </form>
+        </article>
+        <form method="post" action="/update" id="update">
+          <label for="">Update Artist</label>
+          <input
+            type="text"
+            placeholder="Artist-id"
+            required
+            id="id"
+            name="id"
+          />
+          <input
+            type="text"
+            placeholder="New-name"
+            required
+            id="name"
+            name="name"
+          />
+          <button type="submit">Send</button>
+        </form>
+        <form method="post" action="/delete" id="delete">
+          <label for="">Delete Song</label>
+          <input
+            type="text"
+            name="value"
+            placeholder="song-id"
+            required
+            id="song"
+          />
+          <button type="submit">Send</button>
+        </form>
+        <form method="post" action="/join" id="join">
+          <label for="">Join Songs and Album</label>
+          <button type="submit">Send</button>
+        </form>
+        <form method="post" action="/like" id="like">
+          <label for="">Songs with Made</label>
+          <button type="submit">Send</button>
+        </form>
+      </article>
+    </main>
+    <footer></footer>
+  </div>
+</body>
