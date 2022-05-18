@@ -37,13 +37,11 @@ app.get('/', (req, res) => {
 //CREATE
 
 app.post('/create', (req, res) => {
-  const name = req.body.songname;
-  const artist = req.body.artist;
-  const album = req.body.album;
+  const name = req.body.artist;
 
-  const sql = `INSERT INTO songs(song_name, artistID, albumID) VALUES(?,?,?)`;
+  const sql = `INSERT INTO artist(artist_name) VALUES(?)`;
 
-  db.query(sql, [name, artist, album], (err, result) => {
+  db.query(sql, [name], (err, result) => {
     if (err) throw err;
     res.status(200);
     res.send('Insert successfull');
@@ -105,7 +103,7 @@ app.post('/delete', (req, res) => {
 });
 
 app.post('/join', (req, res) => {
-  const sql = `SELECT * FROM albums INNER JOIN songs on albums.albumID = songs.albumID`;
+  const sql = `SELECT artist.artistID, artist.artist_name, songs.songID, songs.song_name FROM artist INNER JOIN linksongs on linksongs.artistID = artist.artistID INNER JOIN songs on linksongs.songID = songs.songID;`;
 
   db.query(sql, (err, result) => {
     if (err) throw err;
