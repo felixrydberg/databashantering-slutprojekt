@@ -86,7 +86,7 @@ app.post('/update', (req, res) => {
   });
 });
 
-//DELETE
+//DELETEnpm r
 
 app.post('/delete', (req, res) => {
   const id = req.body.value;
@@ -103,7 +103,7 @@ app.post('/delete', (req, res) => {
 });
 
 app.post('/join', (req, res) => {
-  const sql = `SELECT artist.artistID, artist.artist_name, songs.songID, songs.song_name FROM artist INNER JOIN linksongs on linksongs.artistID = artist.artistID INNER JOIN songs on linksongs.songID = songs.songID;`;
+  const sql = `SELECT artist.artistID, artist.artist_name, songs.songID, songs.song_name FROM artist INNER JOIN Linkartist on Linkartist.artistID = artist.artistID INNER JOIN songs on Linkartist.songID = songs.songID;`;
 
   db.query(sql, (err, result) => {
     if (err) throw err;
